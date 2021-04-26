@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./difficulties.css";
 
 export default class Difficulties extends React.Component {
   constructor(props) {
@@ -13,9 +14,11 @@ export default class Difficulties extends React.Component {
     const questions = this.props.location.state.questions;
 
     return (
-      <div className="main_container">
-        <h2>Choose Difficulty</h2>
-        <div className="btn_container">
+      <div className="main_container_difficulties">
+        <header className="difficulties_header">
+          <h2>Please choose the difficulty</h2>
+        </header>
+        <main className="btn_container">
           {difficulties.map((difficulty, index) => {
             return (
               <Link
@@ -33,7 +36,7 @@ export default class Difficulties extends React.Component {
               </Link>
             );
           })}
-        </div>
+        </main>
       </div>
     );
   }

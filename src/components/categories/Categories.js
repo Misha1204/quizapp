@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./categories.css";
 
 export default class Categories extends React.Component {
   constructor(props) {
@@ -16,6 +17,9 @@ export default class Categories extends React.Component {
           categories: [...new Set(data.results.map((obj) => obj.category))],
           questions: data.results,
         });
+      })
+      .catch((err) => {
+        console.log(`${err}`);
       });
   }
 
@@ -25,9 +29,12 @@ export default class Categories extends React.Component {
     const questions = this.state.questions;
 
     return (
-      <div className="main_container">
-        <h2>Choose Your Favourite Category</h2>
-        <div className="btn_container">
+      <div className="main_container_categories">
+        <header className="categories_header">
+          <h1>Welcome to our quiz game!</h1>
+          <h2>Please choose your favourite category</h2>
+        </header>
+        <main className="btn_container">
           {categories.map((category, id) => {
             return (
               <Link
@@ -46,7 +53,7 @@ export default class Categories extends React.Component {
               </Link>
             );
           })}
-        </div>
+        </main>
       </div>
     );
   }

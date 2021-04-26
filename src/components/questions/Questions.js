@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./questions.css";
 
 export default class Questions extends React.Component {
   constructor(props) {
@@ -39,16 +40,16 @@ export default class Questions extends React.Component {
     if (questions.length > 0) {
       if (this.state.index < questions.length) {
         return (
-          <div className="main_container">
-            <div className="category_question_container">
+          <div className="main_container_questions">
+            <header className="questions_header">
               <h2>{`Category - ${this.props.match.params.category}`}</h2>
               <p key={this.state.index}>
                 {this.props.location.state.questions[this.state.index][
                   "question"
                 ].replaceAll(/&quot;/gi, '"')}
               </p>
-            </div>
-            <div className="btn_container">
+            </header>
+            <main className="btn_container">
               {this.shuffleArray([
                 ...this.props.location.state.questions[this.state.index]
                   .incorrect_answers,
@@ -65,12 +66,12 @@ export default class Questions extends React.Component {
                   </button>
                 );
               })}
-            </div>
+            </main>
           </div>
         );
       } else {
         return (
-          <div className="main_container">
+          <div className="main_container_game_over">
             <h1>
               You scored {this.state.score} from {questions.length}
             </h1>
@@ -82,7 +83,7 @@ export default class Questions extends React.Component {
       }
     } else {
       return (
-        <div className="main_container">
+        <div className="main_container_no_questions">
           <h1>
             There are no questions. Please choose another category or
             difficulty.
