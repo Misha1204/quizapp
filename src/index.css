@@ -16,7 +16,7 @@ body {
   height: 100%;
   color: rgb(255, 255, 255);
 
-  background-color: rgb(44, 37, 37);
+  background-color: rgb(52, 73, 94);
 }
 
 /* HEADER */
@@ -81,7 +81,7 @@ h2 {
   font-weight: bold;
 
   border: solid 1px rgb(0, 0, 0);
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   transition: ease 0.5s all;
 }
