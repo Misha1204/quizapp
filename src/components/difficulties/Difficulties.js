@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./difficulties.css";
 
 export default class Difficulties extends React.Component {
   constructor(props) {
@@ -14,7 +13,7 @@ export default class Difficulties extends React.Component {
     const questions = this.props.location.state.questions;
 
     return (
-      <div className="main_container_difficulties">
+      <div className="main_container">
         <header className="difficulties_header">
           <h2>Please choose the difficulty</h2>
         </header>

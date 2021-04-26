@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./categories.css";
 
 export default class Categories extends React.Component {
   constructor(props) {
@@ -29,7 +28,7 @@ export default class Categories extends React.Component {
     const questions = this.state.questions;
 
     return (
-      <div className="main_container_categories">
+      <div className="main_container categories">
         <header className="categories_header">
           <h1>Welcome to our quiz game!</h1>
           <h2>Please choose your favourite category</h2>

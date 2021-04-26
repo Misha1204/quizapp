@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./questions.css";
 
 export default class Questions extends React.Component {
   constructor(props) {
@@ -40,7 +39,7 @@ export default class Questions extends React.Component {
     if (questions.length > 0) {
       if (this.state.index < questions.length) {
         return (
-          <div className="main_container_questions">
+          <div className="main_container">
             <header className="questions_header">
               <h2>{`Category - ${this.props.match.params.category}`}</h2>
               <p key={this.state.index}>
@@ -71,7 +70,7 @@ export default class Questions extends React.Component {
         );
       } else {
         return (
-          <div className="main_container_game_over">
+          <div className="main_container">
             <h1>
               You scored {this.state.score} from {questions.length}
             </h1>
@@ -83,7 +82,7 @@ export default class Questions extends React.Component {
       }
     } else {
       return (
-        <div className="main_container_no_questions">
+        <div className="main_container">
           <h1>
             There are no questions. Please choose another category or
             difficulty.
